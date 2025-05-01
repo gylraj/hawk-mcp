@@ -69,6 +69,26 @@ OPENAI_API_KEY=sk-your-key-here
 
 ---
 
+## 🧩 Integration Blueprint
+
+```mermaid
+graph TD
+    UserInput([User provides target account])
+    Agent(LLM Agent)
+    Scraper(MCP Server: Scraper)
+    Drive(MCP Server: Google Drive)
+    Summary([Summarized Research + Engagement Opportunities])
+
+    UserInput --> Agent
+    Agent --> Scraper
+    Agent --> Drive
+    Scraper --> Agent
+    Drive --> Agent
+    Agent --> Summary
+```
+
+---
+
 ## 🚀 Run Instructions
 
 ### ✅ Start MCP Servers (in separate terminals)
@@ -99,7 +119,5 @@ python workflow.py
 ```
 
 It will print a summarized result for the target company.
-
-
 
 [DEMO Here](https://drive.google.com/file/d/1N3_AqMPtU7-S3ZWNe3HIaOeU4vpLipnQ)

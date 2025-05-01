@@ -45,5 +45,6 @@ def perform_account_research(company_name: str):
 
 if __name__ == "__main__":
     from pprint import pprint
-    result = perform_account_research("OpenAI")
+    account = input("Enter target account name: ")
+    result = perform_account_research(account)
     pprint(result)
